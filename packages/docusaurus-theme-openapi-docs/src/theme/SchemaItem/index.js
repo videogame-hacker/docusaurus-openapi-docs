@@ -56,7 +56,7 @@ function SchemaItem({
   ));
 
   const renderDefaultValue = guard(
-    typeof defaultValue === "boolean" ? defaultValue.toString() : defaultValue,
+    typeof defaultValue === "string" ? defaultValue : JSON.stringify(defaultValue),
     (value) => (
       <div className={styles.schemaQualifierMessage}>
         <ReactMarkdown children={`**Default value:** \`${value}\``} />
